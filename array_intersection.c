@@ -10,7 +10,7 @@ int main() {
     int set2[n2];
     for (int i = 0; i < n2; i++) scanf("%d", &set2[i]);
 
-    printf("Intersection:");
+    printf("Intersection : ");
     int first = 1;
 
     for (int i = 0; i < n1; i++) {
