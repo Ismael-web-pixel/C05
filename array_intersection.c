@@ -25,7 +25,7 @@ int main() {
 
         for (int j = 0; j < n2; j++) {
             if (set1[i] == set2[j]) {
-                printf("%s%d", first ? " " : " ", set1[i]);
+                printf("%s%d", first ? "" : " ", set1[i]);
                 first = 0;
                 break;
             }
