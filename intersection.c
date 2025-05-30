@@ -2,7 +2,7 @@
 
 int main() {
     int n1, n2;
-    int j;
+
     // Lire n1 et n2 dans un seul scanf
     scanf("%d %d", &n1, &n2);
 
@@ -33,10 +33,10 @@ int main() {
         if (duplicate) continue;
 
         // Vérifie si set1[i] existe dans set2
-        for ( j = 0; j < n2; j++) 
+        for (int j = 0; j < n2; j++) 
         {
             if (set1[i] == set2[j]) {
-                printf("%s %d", first ? "" : " ", set1[i]);
+                printf("%s %d", first ? "" : "", set1[i]);
                 first = 0;
                 break;
             }
