@@ -3,41 +3,36 @@
 int main() {
     int n1, n2;
 
-    // Lire n1 et n2 dans un seul scanf
-    scanf("%d %d", &n1, &n2);
+    // Lecture du premier tableau
+    scanf("%d", &n1);
+    int a[n1];
+    for (int i = 0; i < n1; i++)
+        scanf("%d", &a[i]);
 
-    int set1[n1], set2[n2];
+    // Lecture du deuxième tableau
+    scanf("%d", &n2);
+    int b[n2];
+    for (int i = 0; i < n2; i++)
+        scanf("%d", &b[i]);
 
-    // Lire les éléments de set1
+    // Affichage des éléments communs sans doublons
+    printf("Intersection :");
     for (int i = 0; i < n1; i++) {
-        scanf("%d", &set1[i]);
-    }
+        int deja_affiche = 0;
 
-    // Lire les éléments de set2
-    for (int i = 0; i < n2; i++) {
-        scanf("%d", &set2[i]);
-    }
-
-    printf("Intersection : ");
-    int first = 1;
-
-    for (int i = 0; i < n1; i++) {
-        // Vérifie si set1[i] est un doublon dans set1
-        int duplicate = 0;
+        // Vérifie si a[i] a déjà été vu dans a[]
         for (int k = 0; k < i; k++) {
-            if (set1[i] == set1[k]) {
-                duplicate = 1;
+            if (a[i] == a[k]) {
+                deja_affiche = 1;
                 break;
             }
         }
-        if (duplicate) continue;
+        if (deja_affiche) continue;
 
-        // Vérifie si set1[i] existe dans set2
-        for (int j = 0; j < n2; j++) 
-        {
-            if (set1[i] == set2[j]) {
-                printf("%s %d", first ? "" : "", set1[i]);
-                first = 0;
+        // Vérifie si a[i] existe dans b[]
+        for (int j = 0; j < n2; j++) {
+            if (a[i] == b[j]) {
+                printf(" %d", a[i]);
                 break;
             }
         }
